@@ -85,10 +85,12 @@ class LoadConfiguration
 
         $configPath = realpath($app->configPath());
 
-        foreach (Finder::create()->files()->name('*.php')->in($configPath) as $file) {
-            $directory = $this->getNestedDirectory($file, $configPath);
+        $directory = new \RecursiveDirectoryIterator($configPath);
+        $iterator = new \RecursiveIteratorIterator($directory);
+        $iterator = new \RegexIterator($iterator, "/^.+\.php$/i", \RecursiveRegexIterator::GET_MATCH);
 
-            $files[$directory.basename($file->getRealPath(), '.php')] = $file->getRealPath();
+        foreach ($iterator as $file) {
+            $files[basename($file[0], '.php')] = "../config/" . basename($file[0]);
         }
 
         ksort($files, SORT_NATURAL);

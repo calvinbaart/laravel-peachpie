@@ -1,12 +1,12 @@
 {
-    "name": "laravel/framework",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "calvinbaart/laravel-peachpie",
+    "description": "The Laravel Framework running under PeachPie.",
+    "keywords": ["framework", "laravel", "peachpie"],
     "license": "MIT",
     "homepage": "https://laravel.com",
     "support": {
-        "issues": "https://github.com/laravel/framework/issues",
-        "source": "https://github.com/laravel/framework"
+        "issues": "https://github.com/calvinbaart/laravel-peachpie/issues",
+        "source": "https://github.com/calvinbaart/laravel-peachpie"
     },
     "authors": [
         {
